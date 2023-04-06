@@ -14,7 +14,13 @@ jobs:
                 projectPath:
                     - TestRunnerGame
                 targetPlatform:
-                    - WebGL
+                    #- StandaloneOSX # Build a macOS standalone (Intel 64-bit).
+                    - StandaloneWindows # Build a Windows standalone.
+                    #- StandaloneWindows64 # Build a Windows 64-bit standalone.
+                    #- StandaloneLinux64 # Build a Linux 64-bit standalone.
+                    #- iOS # Build an iOS player.
+                    #- Android # Build an Android .apk standalone app.
+                    #- WebGL # WebGL.
 
         steps:
             - name: Checkout
@@ -35,7 +41,7 @@ jobs:
               with:
                   targetPlatform: ${{ matrix.targetPlatform }}
                   projectPath: ${{ matrix.projectPath }}/
-            - name: Storing Artifact
+            - name: Store Artifact
               uses: actions/upload-artifact@v2
               with:
                   name: Build-${{ matrix.targetPlatform }}
