@@ -13,7 +13,7 @@ jobs:
             matrix:
                 projectPath:
                     - TestRunnerGame
-                targetPlatform:
+                testMode:
                     - playmode
                     - editmode
 
