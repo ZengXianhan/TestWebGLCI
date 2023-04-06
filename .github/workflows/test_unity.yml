@@ -39,15 +39,15 @@ jobs:
                 artifactsPath: ${{ matrix.testMode }}-artifacts
                 checkName: ${{ matrix.testMode }} Test Results
                 coverageOptions: 'generateAdditionalMetrics;generateHtmlReport;generateBadgeReport;assemblyFilters:+my.assembly.*'
-          - name: Upload Test c Artifact
+          - name: Upload Test Result Artifact
             uses: actions/upload-artifact@v2
             if: always()
             with:
                 name: Test results for ${{ matrix.testMode }}
-                path: ${{ steps.tests.outputs.artifactsPath }}
-          - name: Upload Coverage Coverage Artifact
+                path: test/Test-${{ matrix.testMode }}
+          - name: Upload Coverage Result Artifact
             uses: actions/upload-artifact@v2
             if: always()
             with:
                 name: Coverage results for ${{ matrix.testMode }}
-                path: ${{ steps.tests.outputs.coveragePath }}
+                path: test/Coverage-${{ matrix.testMode }}
