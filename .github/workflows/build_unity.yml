@@ -32,7 +32,7 @@ jobs:
                   UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
               with:
                   targetPlatform: ${{ matrix.targetPlatform }}
-                  projectPath: /TestRunnerGame/
+                  projectPath: TestRunnerGame/
             #- name: Storing Artifact
             - uses: actions/upload-artifact@v2
               with:
