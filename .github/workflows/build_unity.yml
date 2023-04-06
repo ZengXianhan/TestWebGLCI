@@ -8,7 +8,7 @@ jobs:
     buildForAllSupportedPlatforms:
         name: Build for ${{ matrix.targetPlatform }}
         runs-on: ubuntu-latest
-        stragegy:
+        strategy:
             fail-fast: false
             matrix:
                 targetPlatform:
